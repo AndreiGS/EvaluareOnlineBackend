@@ -75,7 +75,7 @@ public class ResultsMapperImpl implements ResultsMapper {
             answer = answer.toLowerCase();
             for(String expected : expectedAnswerArray) {
                 expected = expected.toLowerCase();
-                if(("`"+answer).equals(expected))
+                if(answer.equals(expected))
                     okAns++;
             }
         }
