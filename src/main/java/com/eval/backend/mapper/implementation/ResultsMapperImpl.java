@@ -71,9 +71,17 @@ public class ResultsMapperImpl implements ResultsMapper {
                 expectedAnswerArray[k++] = answer;
             }
         }
-        for(String answer : actualAnswersArray) {
+        for(int j=0; j<actualAnswersArray.length; j++) {
+            String answer=actualAnswersArray[j];
+
+            if(answer == null)
+                continue;
+
             answer = answer.toLowerCase();
-            for(String expected : expectedAnswerArray) {
+            for(int i=0; i<expectedAnswerArray.length; i++) {
+                String expected = expectedAnswerArray[i];
+                if(expected == null)
+                    continue;
                 expected = expected.toLowerCase();
                 if(answer.equals(expected))
                     okAns++;
